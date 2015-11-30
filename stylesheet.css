@@ -1,7 +1,102 @@
+
 html {
   /*GLORIOUS*/
   cursor: url(images/plungercursor.png), auto;
   
   /*A lovely baby blue for the background.*/
   background-color: #ddddff;
+}
+
+body {
+    width:80%;
+    max-width: 1024px;
+    min-width: 480px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px 10px;  
+    border-radius: 10px 10px;
+    box-shadow: 10px 10px 20px black;  
+}
+
+h1{
+    font-family: "Georgia", sans-serif;
+    font-size: 35px;
+}
+  
+/*Beggining of code for link bar on top*/
+header {
+  text-align: center;
+  clear: both;
+}
+
+nav {
+  padding: 3px 0;
+  margin-bottom: 25px;
+  width: 100%;
+  display: table;
+}
+
+nav ul {
+  list-style: none;
+  display: table-row;
+  text-align: center;
+}
+
+nav li {
+  margin: 2px 10px;
+  padding: 2px 10px;
+  
+  display: table-cell;
+  
+  background: linear-gradient(blue, lightblue);
+  
+  width: 25%;
+  
+}
+
+nav ul li a{
+    list-style: none;
+    text-decoration: none;
+    color:white;
+}
+
+/*End of linkbar code*/
+
+/*Aside code*/
+aside {
+  float: right;
+  width: 25%;
+}
+
+/*Main content*/
+.maincontent {
+  width: 75%;
+  text-indent: 1em;
+}
+
+
+.maincontent img {
+  float: center;
+  width: 95%
+}
+
+/* CSS for Forms Here -- Ryan */
+fieldset {
+    border: solid 5px grey;
+    margin-bottom: 5px;
+     background: linear-gradient(aliceblue, lightblue);
+}
+fieldset legend {
+    font-weight: bold;
+    background-color: white;
+}
+input[type=text], select, textarea {
+    width: 200px;
+}
+
+/***************************/
+
+
+footer p{
+    font-size: 0.8em
 }
