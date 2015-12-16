@@ -6,98 +6,162 @@
     <meta name="description" content="This page is a website for Hands for Hire." />
     <title>Hands for Hire - Find Worker</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <script src="search.js"></script>
   </head>
     <body>
-        <div id="wrapper">
-            <header>
-            <!-- company name. David Ovsiew. Copied by Chris Hittner -->
-                <h1>Plumbers for Hire</h1>
-                <h2>A Hands for Hire service</h2>
+      <header>
+      <!-- company name. David Ovsiew. Copied by Chris Hittner -->
+      <img class="one" src="images/logo.png" alt=""/>
+      <img class="two" src="images/logo.png" alt=""/>
+      <h1>Plumbers for Hire</h1>
+      <h2>A Hands for Hire service</h2>
 
-            <!--The header includes the navbar, which will contain the links.-->
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="search.html">Search</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <!--Forms, Ryan -->
-            <form name="form1" id="form1" autocomplete="off" method="get" onsubmit="summarize(); return false;">
-            <fieldset>
-                <legend>Personal Information</legend>
-                <label for="firstname" class="labelitem">First Name</label>
-                <input type="text" name="firstname" id="firstname" size="24" maxlength="32" placeholder="Enter First Name" required pattern="[a-zA-Z][a-zA-Z'\- ]+" title="First Name Cannot Be Blank" /><br />
-                <label for="lastname" class="labelitem">Last Name</label>
-                <input type="text" name="lastname" id="lastname" size="24" maxlength="32" placeholder="Enter Last Name" required pattern="[a-zA-Z][a-zA-Z'\- ]+" title="Last Name Cannot Be Blank" /><br />
-                <div class="labelitem"><label for="address1">Address:
-                    </label></div>
-                <div class="inputitem">
-                    <input type="text" name="address1" id="address1" size="24" maxlength="32" placeholder="Enter Street Address." required pattern=".+" title="Address cannot be blank." /> <br />
-                    <input type="text" name="address2" id="address2" size="24" maxlength="32" required pattern=".+" title="Address cannot be blank." /> <br />
-                </div><br />
-                <label for="phonenumber" class="labelitem">Phone Number: </label>
-                <input type="text" name="phonenumber" id="phonenumber" size="24" maxlength="10" placeholder="Enter Phone Number" required pattern="[7|8|9][0-9]{9}" title="xxxxxxxxxx"/><br />
-                <label for="city" class="labelitem">City:</label>
-                <input type="text" name="city" id="city" size="24" maxlength="32" placeholder="Enter city." required /><br />
-                <label for="state" class="labelitem">State:</label>
-                <select name="state" id="state" required>
-                    <option value="" selected>&nbsp;</option>
-                    <optgroup label="Mid-Atlantic">
-                        <option value="Delaware">Delaware</option>
-                        <option value="New Jersey">New Jersey</option>
-                        <option value="New York">New York</option>
-                    </optgroup>
-                    <optgroup label="New England">
-                        <option label="Connecticut">Connecticut</option>
-                        <option label="Massachusetts">Massachusetts</option>
-                        <option label="Maine">Maine</option>
-                        <option label="New Hampshire">New Hampshire</option>
-                        <option label="Vermont">Vermont</option>
-                        <option label="Rhode Island">Rhode Island</option>
-                    </optgroup>
-                    <optgroup>
-                        <option label="Other">Other</option>
-                    </optgroup>
-                </select><br />
-                <label for="other" class="labelitem">If Other: </label>
-                <input type="text" name="other" id="other" size="24" maxlength="34" placeholder="Enter alternate state." required pattern="/^[a-zA-Z]+$/" title="Use only upper/lower case letters." /><br />
-                <label for="zipcode" class="labelitem">Zip Code</label>
-                <input type="text" name="zipcode" id="zipcode" size="24" maxlength="10" placeholder="Enter Zip Code." required pattern="\d{5}(\-\d{4})?" title="xxxxx or xxxxx-xxxx" /><br />
-            </fieldset>
-                <fieldset>
-                <legend>Plumbing Needs</legend>
-                    <label for="job" class="labelitem">Job Description: </label>
-                <select name="job" id="job" required>
-                    <option value="" selected>&nbsp;</option>
-                    <option value="Toilet">Toilet</option>
-                    <option value="Bathtub">Bathtub</option>
-                    <option label="Shower">Shower</option>
-                    <option value="Kitchen Appliances">Kitchen Appliances</option>
-                    <option label="Piping Replacement">Piping Replacement</option>
-                    <option label="Leak">Leak</option>
-                    <option label="Clog">Clog</option>
-                    <option label="Outdoors">Outdoors</option>
-                </select><br />
-                    <div class="labelitem">Urgency: </div>
-                <div class="inputitem">
-                    <input type="radio" name="urgency" id="low" value="low" />
-                    <label for="low">Low</label><br />
-                    <input type="radio" name="urgency" id="regular" value="Regular" checked="checked" />
-                    <label for="regular">Regular</label><br />
-                    <input type="radio" name="urgency" id="high" value="High" />
-                    <label for="high">High</label><b />
-                </div><br /><br />
-                    <label for="coloroveralls" class="labelitem">Desired Color:</label>
-                <input type="color" name="coloroveralls" id="coloroveralls" title="What color overalls will your plumber wear?"/><br />
-                </fieldset>
-      <!-- Copyright for Hands for Hire and our names. David Ovsiew. Modified by Christopher Hittner.-->
-      
+      <!--The header includes the navbar, which will contain the links.-->
+          <nav class="navbar">
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="search.html">Search</a></li>
+              </ul>
+          </nav>
+      </header>
+        <!--Forms, Ryan -->
+      <form name="form1" id="form1" autocomplete="off" method="get" onsubmit="summarize(); return false;">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="firstname" class="labelitem">First Name</label>
+          <input type="text" name="firstname" id="firstname" size="24" maxlength="32" placeholder="Enter First Name" required pattern="[a-zA-Z][a-zA-Z'\- ]+" title="First Name Cannot Be Blank" /><br />
+          <label for="lastname" class="labelitem">Last Name</label>
+          <input type="text" name="lastname" id="lastname" size="24" maxlength="32" placeholder="Enter Last Name" required pattern="[a-zA-Z][a-zA-Z'\- ]+" title="Last Name Cannot Be Blank" /><br />
+          <div class="labelitem"><label for="address1">Address:
+              </label></div>
+          <div class="inputitem">
+              <input type="text" name="address1" id="address1" size="24" maxlength="32" placeholder="Enter Street Address." required pattern=".+" title="Address cannot be blank." /> <br />
+              <input type="text" name="address2" id="address2" size="24" maxlength="32" pattern=".+" title="Address cannot be blank." /> <br />
+          </div><br />
+          <label for="phonenumber" class="labelitem">Phone Number: </label>
+          <input type="text" name="phonenumber" id="phonenumber" size="24" maxlength="10" placeholder="Enter Phone Number" required pattern="\d{10}" title="xxxxxxxxxx"/><br />
+          <label for="city" class="labelitem">City:</label>
+          <input type="text" name="city" id="city" size="24" maxlength="32" placeholder="Enter city." required /><br />
+          <label for="state" class="labelitem">State:</label>
+          <select name="state" id="state" required>
+              <option value="" selected>&nbsp;</option>
+                  <option label="Alabama">Alabama</option>
+                  <option label="Alaska">Alaska</option>
+                  <option label="American Samoa">American Samoa</option>
+                  <option label="Arizona">Arizona</option>
+                  <option label="Arkansas">Arkansas</option>
+                  <option label="California">California</option>
+                  <option label="Colorado">Colorado</option>
+                  <option label="Connecticut">Connecticut</option>
+                  <option value="Delaware">Delaware</option>
+                  <option label="District of Columbia">District of Columbia</option>
+                  <option label="Florida">Florida</option>
+                  <option label="Georgia">Georgia</option>
+                  <option label="Guam">Guam</option>
+                  <option label="Hawaii">Hawaii</option>
+                  <option label="Idaho">Idaho</option>
+                  <option label="Illinois">Illinois</option>
+                  <option label="Indiana">Indiana</option>
+                  <option label="Iowa">Iowa</option>
+                  <option label="Kansas">Kansas</option>
+                  <option label="Kentucky">Kentucky</option>
+                  <option label="Louisiana">Louisiana</option>
+                  <option label="Maine">Maine</option>
+                  <option label="Maryland">Maryland</option>
+                  <option label="Massachusetts">Massachusetts</option>
+                  <option label="Michigan">Michigan</option>
+                  <option label="Minnesota">Minnesota</option>
+                  <option label="Minor Outlying Islands">Minor Outlying Islands</option>
+                  <option label="Mississippi">Mississippi</option>
+                  <option label="Missouri">Missouri</option>
+                  <option label="Montana">Montana</option>
+                  <option label="Alaska">Nebraska</option>
+                  <option label="Nevada">Nevada</option>
+                  <option label="New Hampshire">New Hampshire</option>
+                  <option value="New Jersey">New Jersey</option>
+                  <option label="New Mexico">New Mexico</option>
+                  <option value="New York">New York</option>
+                  <option label="North Carolina">North Carolina</option>
+                  <option label="North Dakota">North Dakota</option>
+                  <option label="Northern Mariana Islands">Northern Mariana Islands</option>
+                  <option label="Ohio">Ohio</option>
+                  <option label="Oklahoma">Oklahoma</option>
+                  <option label="Oregon">Oregon</option>
+                  <option label="Pennsylvania">Pennsylvania</option>
+                  <option label="Puerto Rico">Puerto Rico</option>
+                  <option label="Rhode Island">Rhode Island</option>
+                  <option label="South Carolina">South Carolina</option>
+                  <option label="South Dakota">South Dakota</option>
+                  <option label="Tennessee">Tennessee</option>
+                  <option label="Texas">Texas</option>
+                  <option label="US Virgin Islands">US Virgin Islands</option>
+                  <option label="Utah">Utah</option>
+                  <option label="Vermont">Vermont</option>
+                  <option label="Virginia">Virginia</option>
+                  <option label="Washington">Washington</option>
+                  <option label="West Virginia">West Virginia</option>
+                  <option label="Wisconson">Wisconsin</option>
+                  <option label="Wyoming">Wyoming</option>
+          </select><br />
+          <label for="zipcode" class="labelitem">Zip code:</label>
+          <input type="text" name="zipcode" id="zipcode" size="24" maxlength="10" placeholder="Enter zip code." required pattern="\d{5}(\-\d{4})?" title="##### or #####-####" /><br />
+        </fieldset>
+          <fieldset>
+            <legend>Plumbing Needs</legend>
+            <label for="job" class="labelitem">Job Description: </label>
+            <select name="job" id="job" required>
+                <option value="" selected>&nbsp;</option>
+                <option value="Toilet">Toilet</option>
+                <option value="Bathtub">Bathtub</option>
+                <option label="Shower">Shower</option>
+                <option value="Kitchen Appliances">Kitchen Appliances</option>
+                <option label="Piping Replacement">Piping Replacement</option>
+                <option label="Leak">Leak</option>
+                <option label="Clog">Clog</option>
+                <option label="Outdoors">Outdoors</option>
+            </select><br />
+            <div id="labelitem">Urgency: </div>
+            <div class="inputitem">
+                <input type="radio" name="urgency" id="low" value="low" />
+                <label for="low">Low</label><br />
+
+                <input type="radio" name="urgency" id="regular" value="Regular" checked="checked" />
+                <label for="regular">Regular</label><br />
+
+                <input type="radio" name="urgency" id="high" value="High" />
+                <label for="high">High</label>
+            </div><br />
+            <label for="budget" class="labelitem">Budget: $</label>
+            <input type="number" name="budget" id="budget" size="24"
+                   placeholder="Enter your budget." required min="25"
+                   title="Enter your budget" /><br /><br />
+
+            <label for="completiondate" class="labelitem">Completion date:</label>
+            <input type="date" name="completiondate" id="completiondate" title="Enter your completion date" required /><br /><br />
+            <label for="coloroveralls" class="labelitem">Desired Overall Color:   </label>
+            <input type="color" name="coloroveralls" id="coloroveralls" title="What color overalls will your plumber wear?"/><br />
+            <section id="reset_submit">
+              <input class="button" type="reset" value="Reset" onclick="reset_form()" /> 
+              <input class="button" type="submit" value="Submit" />
+            </section><br />
+          </fieldset>
+        <div id="summary_wrapper">
+          <fieldset>
+            <legend>Result</legend>
+            <!--     This section is empty because the employee info is inserted here for the search result.       -->
+            <section id="summary"></section>
+          </fieldset>
         </div>
-        <footer>
-          <p>Copyright &copy; 2015 Christopher Hittner, Quian Wu, Ryan Little, David Ovsiew, and Do Park. All Rights Reserved.</p>
-        </footer>
-    </body>
+      
+      <!-- Copyright for Hands for Hire and our names. David Ovsiew. Modified by Christopher Hittner.-->
+    </form>
+    
+    <footer>
+      <p>Copyright &copy; 2015 Christopher Hittner, Quian Wu, Ryan Little, David Ovsiew, and Do Park. All Rights Reserved.</p>
+      <p>We pledge our honor that we have abided by the Stevens Honor System.</p>
+      <p>Note: if you need someone to build walls instead, click <a href="http://www.trump.com/biography/" target="_blank">here</a></p>
+    </footer>
+  </body>
   
 </html>
